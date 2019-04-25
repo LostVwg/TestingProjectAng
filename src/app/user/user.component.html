@@ -1,0 +1,25 @@
+<cdk-virtual-scroll-viewport [itemSize]="80" class="viewport">
+    <table class="centered">
+      <thead>
+      <tr>
+        <th>Номер</th>
+        <th>ФИО</th>
+        <th>Должность</th>
+        <th>Адрес</th>
+        <th>Возраст</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *cdkVirtualFor="let user of users; templateCacheSize: 0" class="table-users">
+        <td>{{users.indexOf(user)+1}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.post}}</td>
+        <td>{{user.city}}</td>
+        <td>{{user.age}}</td>
+      </tr>
+      </tbody>
+    </table>
+</cdk-virtual-scroll-viewport>
+
+
